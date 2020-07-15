@@ -11,8 +11,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {"path": "src/custom-webpack.config.js"},
             "outputPath": "dist/harp-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -61,7 +62,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "harp-app:build"
           },
